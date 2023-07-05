@@ -1,4 +1,4 @@
-/**APPlication configuration goes here for now */
+/**App logic */
 
 const express = require('express');
 const app = express();
