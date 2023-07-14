@@ -7,15 +7,20 @@
     <body>
         <div class="row align-items-center" style="height: 100vh;">
             <div class="mx-auto col-10 col-md-8 col-lg-6">
-                <form action="/contact" method="post">
+                <form action="/subscribe" method="post">
                     <div class="form-floating mb-3">
-                        <input type="name" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="name" name="name" class="form-control" id="floatingInput" placeholder="Name">
                         <label for="floatingInput">Name</label>
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                        <label for="floatingPassword">Password</label>
+                        <input type="text" name="email" class="form-control" id="floatingEmail" placeholder="Email">
+                        <label for="floatingEmail">Email</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" name="zipCode" class="form-control" id="floatingZipCode" placeholder="zip code" pattern="[0-9]{5}">
+                        <label for="floatingZipCode">Zip Code</label>
                     </div>
 
                     <input class="btn btn-primary" type="submit" value="Submit" style="margin-top: 10px;">
