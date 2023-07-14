@@ -3,8 +3,11 @@
 const express = require('express');
 const homeController = require('./controllers/homeController');
 const errorController = require('./controllers/errorController');
-const layouts = require('express-ejs-layouts')  ;
+const layouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
 const app = express();
+
+mongoose.connect('mongodb://localhost:27017/meal_maker', {useNewUrlParser: true});
 
 /**Middleware to interpret incoming request bodies */
 app.use(express.static('public'));
