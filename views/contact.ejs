@@ -5,26 +5,29 @@
         <title>Contact Form</title>
     </head>
     <body>
-        <div class="row align-items-center" style="height: 100vh;">
-            <div class="mx-auto col-10 col-md-8 col-lg-6">
-                <form action="/subscribe" method="post">
-                    <div class="form-floating mb-3">
-                        <input type="name" name="name" class="form-control" id="floatingInput" placeholder="Name">
-                        <label for="floatingInput">Name</label>
-                    </div>
+        <div class="card mx-auto text-center" style="width: 25rem;">
+            <img src="/images/curry-pot.jpg" class="card-img-top" alt="curry-dish-in-glass-pot"/>
+            <div class="card-body">
+                <h5 class="card-title">Subscribe Today</h5>
+                <p class="card-text" style="font-weight: bold;">Never miss a recipe</p>
+                    <form action="/subscribe" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="name" name="name" class="form-control" id="floatingInput" placeholder="Name">
+                            <label for="floatingInput">Name</label>
+                        </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="text" name="email" class="form-control" id="floatingEmail" placeholder="Email">
-                        <label for="floatingEmail">Email</label>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="email" class="form-control" id="floatingEmail" placeholder="Email">
+                            <label for="floatingEmail">Email</label>
+                        </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="text" name="zipCode" class="form-control" id="floatingZipCode" placeholder="zip code" pattern="[0-9]{5}">
-                        <label for="floatingZipCode">Zip Code</label>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="zipCode" class="form-control" id="floatingZipCode" placeholder="zip code" pattern="[0-9]{5}">
+                            <label for="floatingZipCode">Zip Code</label>
+                        </div>
 
-                    <input class="btn btn-primary" type="submit" value="Submit" style="margin-top: 10px;">
-                </form>
+                        <input class="btn btn-primary subscribe-btn" type="submit" value="Submit" style="margin-top: 10px;">
+                    </form>
             </div>
         </div>
     </body>

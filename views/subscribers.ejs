@@ -6,16 +6,27 @@
     </head>
 
     <body>
+        
         <% subscribers.forEach((subscriber) => { %>
-            <p>
-                <%= subscriber.name %>
-            </p>
-
-            <p>
-                <%= subscriber.email %>
-            </p>
-
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 d-flex">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/images/angela_schrute.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= subscriber.name %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= subscriber.email %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         <% }) %>
+        
     </body>
 
 </html>
