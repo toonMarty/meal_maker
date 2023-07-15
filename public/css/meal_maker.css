@@ -1,0 +1,16 @@
+.thank-you-btn, .back-btn{
+    width: 10em;
+    border-radius: 1.25em;
+    background-color: #FF9999;
+    font-weight: bold;
+    color: black;
+    border: 1px solid #FF9999;
+}
+
+.subscribe-btn {
+    width: 15em;
+    background-color: #FF6700;
+    border: 1px solid #FF6700;
+    font-weight: bold;
+    color: black;
+}
