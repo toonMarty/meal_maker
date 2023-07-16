@@ -24,7 +24,7 @@ exports.getSubscriptionPage = (req, res) => {
 
 exports.saveSubscriber = (req, res) => {
     const newSubscriber = new Subscriber({
-      name      : req.body.data,
+      name      : req.body.name,
       email     : req.body.email,
       zipCode   : req.body.zipCode
     });

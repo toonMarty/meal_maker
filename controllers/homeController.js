@@ -16,10 +16,10 @@ let courses = [
   },
 
   {
-    title : 'Design Pattern bacon',
+    title : 'Design Pattern Bacon',
     cost  : 800 
   }
-  
+
 ];
 
 exports.showCourses = (req, res) => {

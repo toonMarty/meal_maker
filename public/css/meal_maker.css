@@ -15,10 +15,11 @@
     color: black;
 }
 
-.nav-link, .navbar-brand, .navbar-toggler, .navbar-toggler-icon{
+.nav-link, .navbar-brand, .navbar-toggler{
     color: white;
 }
 
 .navbar-toggler-icon {
-    background-color: white;
+    color: black;
+    background-color: green;
 }
