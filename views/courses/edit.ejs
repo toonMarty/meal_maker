@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Meal Maker | Edit Course</title>
+    </head>
+    <body>
+        <div class="card mx-auto edit-card" style="width: 25rem; margin-top: 10vh;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Edit Course</h5>
+                <form class="edit-form" method="POST" action="<%= `/courses/${course._id}/update?_method=PUT` %>">
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Title</label>
+                        <input type="text" name="title" class="form-control" id="inputTitle" value="<%= course.title %>" autofocus>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputMaxStudents" class="form-label">Maximum Students</label>
+                        <input type="text" name="maxStudents" class="form-control" id="inputMaxStudents" value="<%= course.maxStudents %>" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputCost" class="form-label">Cost</label>
+                        <input type="text" name="cost" class="form-control" id="inputCost" value="<%= course.cost %>" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputDescription" class="form-label">Description</label>
+                        <textarea name="description" class="form-control" id="inputDescription" rows="3" required>
+                            <%= course.description %> 
+                        </textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary sign-up">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

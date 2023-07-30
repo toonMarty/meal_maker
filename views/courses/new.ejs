@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <title>New Course Form</title>
+    </head>
+    <body>
+        <div class="card mx-auto text-center" style="width: 25rem; margin-top: 10vh;">
+            <img src="/images/new-course.png" class="card-img-top" alt="stacked-books-and-pencil-holder"/>
+            <div class="card-body">
+                <h5 class="card-title">Subscribe Today</h5>
+                <p class="card-text" style="font-weight: bold;">Never miss a recipe</p>
+                    <form action="/courses/create" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" name="title" class="form-control" id="floatingTitle" placeholder="Title" autofocus>
+                            <label for="floatingInput">Title</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="maxStudents" class="form-control" id="floatingMaxStudents" placeholder="Maximum Students">
+                            <label for="floatingEmail">Number of Students</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="cost" class="form-control" id="floatingCost" placeholder="cost">
+                            <label for="floatingZipCode">Cost</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea type="text" name="description" class="form-control" placeholder="Describe Course" id="floatingDescription"></textarea>
+                            <label for="floatingDescription">Description</label>
+                          </div>
+
+                        <input class="btn btn-primary subscribe-btn" type="submit" value="Add Course" style="margin-top: 10px;">
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>
+
