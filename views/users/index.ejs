@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Meal Maker | Users</title>
+    </head>
+    <body>
+        <h2 class="text-center" style="height: 20vh;">Users Table</h2>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-light" style="margin: 0 auto; width: 80%;">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Avatar</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Zip Code</th>
+                        <th scope="col">Edit</th>
+                        <th scpe="col">Delete</th>
+                        <th scope="col">Name Letter Count</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% users.forEach((user) => { %> 
+                    <tr>
+                        <th scope="row">
+                            <td class="user-first-letter">
+                                <img src="/images/profile-default.jpg" height="40" width="40">
+                            </td>
+                            <td>
+                                <a href="<%= `users/${user._id}` %>">
+                                    <%= user.fullName %>
+                                </a>
+                            </td>
+                            <td>
+                                <%= user.email %>
+                            </td>
+                            <td>
+                                <%= user.zipCode %>
+                            </td>
+                            <td>
+                                <a class="btn btn-primary edit-user-btn" href="<%= `users/${user._id}/edit` %>" role="button">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    Edit
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn btn-danger delete-user-btn" href="<%= `users/${user._id}/delete?_method=DELETE` %>" role="button" onclick="return confirm('Are you sure you want to delete this user?')">
+                                    <i class="fa-solid fa-trash"></i>
+                                    Delete
+                                </a>
+                            </td>
+                            <td>
+                                <%= user.letterCount %>
+                            </td>
+                        </th>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Meal Maker | Create a New User</title>
+    </head>
+
+    <body class="bg-image opacity-25">
+            <div class="card mx-auto" style="width: 25rem; margin-top: 10vh;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Create a New User</h5>
+                    <form class="card-text" action="/users/create" method="POST">
+                        <div class="mb-3">
+                            <label for="inputFirstName" class="form-label">First Name</label>
+                            <input type="text" name="first" class="form-control" id="inputFirstName" placeholder="First" autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputLastName" class="form-label">Last Name</label>
+                            <input type="text" name="last" class="form-control" id="inputLastName" placeholder="Last">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email address</label>
+                            <input type="text" name="email" class="form-control" id="inputEmail" placeholder="Email address" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputZipCode" class="form-label">Zip Code</label>
+                            <input type="text" name="zipCode" class="form-control" id="inputZipCode" placeholder="Zip Code" pattern="\d*" required>
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary sign-up">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </body>
+</html>

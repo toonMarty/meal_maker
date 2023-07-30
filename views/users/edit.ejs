@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Meal Maker | Edit User</title>
+    </head>
+    <body>
+        <div class="card mx-auto edit-card" style="width: 25rem; margin-top: 10vh;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Edit User</h5>
+                <form class="edit-form" method="POST" action="<%= `/users/${user._id}/update?_method=PUT` %>">
+                    <div class="mb-3">
+                        <label for="inputFirstName" class="form-label">First Name</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa-solid fa-user" style="color: #FF6700;"></i> 
+                               </div>
+                            <input type="text" name="first" class="form-control" id="inputFirstName" value="<%= user.name.first %>" placeholder="First" autofocus>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputLastName" class="form-label">Last Name</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa-solid fa-user" style="color: #FF6700;"></i> 
+                            </div>
+                            <input type="text" name="last" class="form-control" id="inputLastName" value="<%= user.name.last %>" placeholder="Last">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa-solid fa-lock" style="color: #FF6700;"></i> 
+                            </div>
+                            <input class="form-control" type="password" name="password" id="inputPassword" value="<%= user.password %>" placeholder="Password" required>
+                        </div> 
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email address</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">
+                                <i class="fa-solid fa-envelope" style="color: #FF6700;"></i> 
+                               </div>
+                        <input type="text" name="email" class="form-control" id="inputEmail" value="<%= user.email %>" placeholder="Email address" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="inputZipCode" class="form-label">Zip Code</label>
+                        <input type="text" name="zipCode" class="form-control" id="inputZipCode" value="<%= user.zipCode %>" placeholder="Zip Code" pattern="\d*" required>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary sign-up">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
