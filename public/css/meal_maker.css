@@ -45,21 +45,6 @@
     border: 1px solid #89CFF0;
 }
 
-/*.bg-image{
-
-    background-image: url('/images/register-new-user-background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center center;
-    background-attachment: fixed;
-    position: relative; 
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}*/
-
 .bg-image::before {
     content: "";
     background-image: url('/images/register-new-user-background.jpg');
@@ -77,8 +62,8 @@
 }
 
 .show-user-details {
-    background: -webkit-linear-gradient(to right, #304352, #d7d2cc);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #304352, #d7d2cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #304352, #d7d2cc);
+    background: linear-gradient(to right, #304352, #d7d2cc); 
 }
 
 .edit-card {
@@ -92,10 +77,6 @@
 }
 
 .edit-form .input-group-addon {
-    /*position: absolute;
-    top: 100%;
-    left: 10px;
-    transform: translateY(-50%);*/
     position: absolute;
     top: 5px;
     left: 2px;
@@ -105,7 +86,7 @@
 .edit-form input[type="text"],
 .edit-form input[type="password"], 
 .edit-form #inputDescription {
-  padding-left: 20px; /* Ensure enough space for the icon */
+  padding-left: 20px;
   background-color: #1e1e1e;
   color: white;
   border-color:#FF6700;
