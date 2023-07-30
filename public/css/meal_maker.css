@@ -23,3 +23,169 @@
     color: black;
     background-color: green;
 }
+
+.form-label {
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sign-up {
+    background-color: #FF6700;
+    border: 1px solid #FF6700;
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+
+    width: 15em;
+    border-radius: .75em;
+}
+
+.sign-up:hover {
+    background-color: #89CFF0;
+    border: 1px solid #89CFF0;
+}
+
+/*.bg-image{
+
+    background-image: url('/images/register-new-user-background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}*/
+
+.bg-image::before {
+    content: "";
+    background-image: url('/images/register-new-user-background.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+}
+
+.subscribed {
+    color: black;
+}
+
+.show-user-details {
+    background: -webkit-linear-gradient(to right, #304352, #d7d2cc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #304352, #d7d2cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.edit-card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.edit-form .input-group {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.edit-form .input-group-addon {
+    /*position: absolute;
+    top: 100%;
+    left: 10px;
+    transform: translateY(-50%);*/
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    z-index: 5;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="password"], 
+.edit-form #inputDescription {
+  padding-left: 20px; /* Ensure enough space for the icon */
+  background-color: #1e1e1e;
+  color: white;
+  border-color:#FF6700;
+}
+
+
+.edit-form input[type="text"]:focus,
+.edit-form input[type="password"]:focus,
+.edit-form #inputDescription:focus {
+    outline: 2px solid #FF6700;
+
+}
+
+.show-user-details .all-users-btn {
+    background-color:white;
+    border-color: rgb(35, 231, 35);
+    font-weight: bold;
+    color: black
+}
+
+.show-user-details .all-users-btn:hover {
+    background-color: rgb(35, 231, 35);
+}
+
+.show-user-details .edit-user-btn {
+    background-color:white;
+    border-color: rgb(65, 65, 255);
+    font-weight: bold;
+    color: black;
+}
+
+.show-user-details .edit-user-btn:hover {
+    background-color: rgb(65, 65, 255);
+}
+
+.show-user-details .delete-user-btn {
+    background-color:white;
+    border-color: rgb(238, 63, 63);
+    font-weight: bold;
+    color: black;
+
+}
+
+.show-user-details .delete-user-btn:hover {
+    background-color: rgb(238, 63, 63);
+
+}
+
+.table-responsive .edit-user-btn {
+    background-color:rgba(255, 253, 253, 0.411);
+    border-color: rgb(65, 65, 255);
+    font-weight: 400;
+    color: black;
+}
+
+.table-responsive .edit-user-btn:hover {
+    background-color: rgb(65, 65, 255);
+}
+
+.table-responsive .delete-user-btn {
+    background-color:rgba(255, 253, 253, 0.411);
+    border-color: rgb(238, 63, 63);
+    font-weight: 400;
+    color: black;
+}
+
+.table-responsive .delete-user-btn:hover {
+    background-color: rgb(238, 63, 63);
+}
+
+.sub-table .edit-user-btn{
+    background-color: #1e1e1e;
+    border-color: rgb(65, 65, 255);
+    font-weight: 400;
+    color: white;
+}
+
+.sub-table .delete-user-btn {
+    background-color: #1e1e1e;
+    border-color: rgb(238, 63, 63);
+    font-weight: 400;
+    color: white;
+}
