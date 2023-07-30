@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Our Subscribers</title>
+    </head>
+
+    <body>
+        <h2 class="text-center" style="height: 20vh;">Our Subscribers</h2>
+        <div class="table-responsive sub-table">
+        <table class="table table-dark table-striped" style="margin: 0 auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% subscribers.forEach((subscriber) => { %> 
+                <tr>
+                    <th scope="row">
+                        <td>
+                            <a href="<%= `subscribers/${subscriber._id}` %>">
+                                <%= subscriber.name %>
+                            </a>
+                            
+                        </td>
+                        <td>
+                            <%= subscriber.email %>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary edit-user-btn" href="<%= `subscribers/${subscriber._id}/edit` %>" role="button">
+                                <i class="fa-regular fa-pen-to-square"></i>
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <a class="btn btn-danger delete-user-btn" href="<%= `subscribers/${subscriber._id}/delete?_method=DELETE` %>" role="button" onclick="return confirm(`Are you sure you want to delete <%= subscriber.name %>?`)">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </a>
+                        </td>
+                    </th>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        </div>
+        
+    </body>
+
+</html>

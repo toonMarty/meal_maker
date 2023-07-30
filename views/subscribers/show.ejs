@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Meal Maker | Profile</title>
+    </head>
+    <body class="show-user-details">
+        <div class="card mx-auto" style="width: 25rem; margin-top: 10vh;">
+          <img src="/images/profile-default.jpg" class="card-img-top" alt="person-in-frame">
+          <div class="card-body text-center">
+            <h5 class="card-title my-3"><%= subscriber.name %></h5>
+            <p class="card-text text-muted mb-1">
+              <img src="/images/email-logo.png" style="float: left;" height="24" width="24">
+              <%= subscriber.email %>
+            </p>
+
+            <p class="card-text text-muted mb-1">
+              <img src="/images/zip-code.png" style="float: left;" height="24" width="24">
+              <%= subscriber.zipCode %>
+            </p>
+
+            <p>
+                <%= subscriber.name %> has <%= subscriber.courses.length %> associated course(s)
+            </p>
+            
+            <a class="btn btn-success all-users-btn" href="/subscribers">All Subs</a>
+            <a class="btn btn-primary edit-user-btn" href="<%= `/subscribers/${subscriber._id}/edit` %>">Edit Sub</a>
+            <a class="btn btn-danger delete-user-btn" href="<%= `/subscribers/${subscriber._id}/delete?_method=DELETE` %>" onclick="return confirm(`Are you sure you want to delete <%= subscriber.name %>`)">Delete Sub</a>
+          </div>
+
+        </div>
+
+    </body>
+</html>
