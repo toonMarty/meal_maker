@@ -100,29 +100,29 @@
 
 }
 
-.show-user-details .all-users-btn {
+.show-user-details .all-users-btn, .show-course-details .all-courses-btn {
     background-color:white;
     border-color: rgb(35, 231, 35);
     font-weight: bold;
     color: black
 }
 
-.show-user-details .all-users-btn:hover {
+.show-user-details .all-users-btn:hover, .show-course-details .all-courses-btn:hover {
     background-color: rgb(35, 231, 35);
 }
 
-.show-user-details .edit-user-btn {
+.show-user-details .edit-user-btn, .show-course-details .edit-course-btn {
     background-color:white;
     border-color: rgb(65, 65, 255);
     font-weight: bold;
     color: black;
 }
 
-.show-user-details .edit-user-btn:hover {
+.show-user-details .edit-user-btn:hover, .show-course-details .edit-course-btn:hover {
     background-color: rgb(65, 65, 255);
 }
 
-.show-user-details .delete-user-btn {
+.show-user-details .delete-user-btn, .show-course-details .delete-course-btn {
     background-color:white;
     border-color: rgb(238, 63, 63);
     font-weight: bold;
@@ -130,7 +130,7 @@
 
 }
 
-.show-user-details .delete-user-btn:hover {
+.show-user-details .delete-user-btn:hover, .show-course-details .delete-course-btn:hover {
     background-color: rgb(238, 63, 63);
 
 }

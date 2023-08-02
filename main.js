@@ -57,6 +57,7 @@ router.put('/users/:id/update', usersController.update, usersController.redirect
 
 router.delete('/users/:id/delete', usersController.delete, usersController.redirectView);
 
+// router.get('/courses/recipes')
 router.get('/courses', coursesController.index, coursesController.indexView);
 router.get('/courses/new', coursesController.new, coursesController.redirectView);
 router.get('/courses/:id', coursesController.show, coursesController.showView);
@@ -67,7 +68,6 @@ router.post('/courses/create', coursesController.create, coursesController.redir
 router.put('/courses/:id/update', coursesController.update, coursesController.redirectView);
 
 router.delete('/courses/:id/delete', coursesController.delete, coursesController.redirectView);
-
 
 
 app.listen(app.get('port'), () => {

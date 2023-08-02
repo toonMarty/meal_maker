@@ -26,9 +26,9 @@
                 <%= course.description %>
             </p>
 
-            <a class="btn btn-success all-users-btn" href="/courses">All Courses</a>
-            <a class="btn btn-primary edit-user-btn" href="<%= `/courses/${course._id}/edit` %>">Edit Course</a>
-            <a class="btn btn-danger delete-user-btn" href="<%= `/courses/${course._id}/delete?_method=DELETE` %>" onclick="return confirm(`Are you sure you want to delete <%= course.title %>`)">Delete Course</a>
+            <a class="btn btn-success all-courses-btn" href="/courses">All Courses</a>
+            <a class="btn btn-primary edit-course-btn" href="<%= `/courses/${course._id}/edit` %>">Edit Course</a>
+            <a class="btn btn-danger delete-course-btn" href="<%= `/courses/${course._id}/delete?_method=DELETE` %>" onclick="return confirm(`Are you sure you want to delete <%= course.title %>`)">Delete Course</a>
           </div>
 
         </div>
