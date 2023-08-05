@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Meal Maker | Login</title>
+    </head>
+    <body>
+        <div class="card mx-auto text-center login-form" style="width: 25rem; margin-top: 20vh;">
+            <div class="card-body">
+                <h5 class="card-title">Login</h5>
+                <form action="/users/login" method="post">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="email" class="form-control" id="floatingEmail" placeholder="Email" autofocus required>
+                        <label for="floatingEmail">Email</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password" id="floatingPassword" required>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+
+                    <input class="btn btn-primary subscribe-btn" type="submit" value="Login" style="margin-top: 10px;">
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
