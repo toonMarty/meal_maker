@@ -12,6 +12,7 @@
                 <i class="fa-solid fa-graduation-cap" style="color: #121111;"></i>
                 <%= course.title %>
             </h5>
+
             <p class="card-text text-muted mb-1">
                 <img src="/images/students-learning.png" style="float:left" height="24" width="24">
               <%= course.maxStudents %>
@@ -30,8 +31,6 @@
             <a class="btn btn-primary edit-course-btn" href="<%= `/courses/${course._id}/edit` %>">Edit Course</a>
             <a class="btn btn-danger delete-course-btn" href="<%= `/courses/${course._id}/delete?_method=DELETE` %>" onclick="return confirm(`Are you sure you want to delete <%= course.title %>`)">Delete Course</a>
           </div>
-
         </div>
-
     </body>
 </html>
