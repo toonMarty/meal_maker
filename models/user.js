@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 const Subscriber = require('./subscriber');
 
+const passportLocalMongoose = require('passport-local-mongoose');
+
+const coursesController = require('../controllers/coursesController');
+
+
 const userSchema = new Schema({
   name: {
     first: {
@@ -28,11 +33,6 @@ const userSchema = new Schema({
     max         : 99999
   },
 
-  password: {
-    // needs to be hashed for security.
-    type        : String,
-    required    : true
-  },
 
   courses: [{
     type    : Schema.Types.ObjectId,
@@ -45,6 +45,8 @@ const userSchema = new Schema({
 {
     timestamps: true
 });
+
+
 
 userSchema.virtual("fullName")
 .get(function() {
@@ -85,6 +87,10 @@ userSchema.pre("save", function(next) {
   } else {
     next();
   }
+});
+
+userSchema.plugin(passportLocalMongoose, {
+  usernameField: 'email' 
 });
 
 module.exports = mongoose.model('User', userSchema);
