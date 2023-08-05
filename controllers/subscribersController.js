@@ -44,13 +44,16 @@ module.exports = {
     let subscriberParams = getSubscriberParams(req.body);
     Subscriber.create(subscriberParams)
     .then(subscriber => {
+      req.flash('success', `Thank you ${subscriber.name} for your subscription`);
       res.locals.redirect = '/subscribers';
       res.locals.subscriber = subscriber;
       next();
     })
     .catch(error => {
       console.log(`Failed to save subscriber: ${error.message}`);
-      next(error);
+      res.locals.redirect = '/subscribers/new';
+      req.flash('error', 'Unable to create subscriber');
+      next();
     });
   },
 
@@ -95,13 +98,16 @@ module.exports = {
 
     Subscriber.findByIdAndUpdate(subscriberId, { $set: subscriberParams})
     .then(subscriber => {
+      req.flash('success', `${subscriber.name} updated successfully`);
       res.locals.redirect = `/subscribers/${subscriberId}`;
       res.locals.subscriber = subscriber;
       next();
     })
     .catch(error => {
       console.log(`Couldn't update subscriber: ${error.message}`);
-      next(error);
+      res.locals.redirect = '/subscribers/${subscriberId}';
+      req.flash('error', 'Unable to update subscriber');
+      next();
     });
   },
 
@@ -109,11 +115,14 @@ module.exports = {
     let subscriberId = req.params.id;
     Subscriber.findByIdAndRemove(subscriberId)
     .then(() => {
+      req.flash('success', 'Subscriber deleted successfully');
       res.locals.redirect = '/subscribers';
       next();
     })
     .catch(error => {
       console.log(`Couldn't update subscriber: ${error.message}`);
+      res.locals.redirect = '/subscribers/${subscriberId}';
+      req.flash('error', 'Unable to delete subscriber');
       next();
     });
   }

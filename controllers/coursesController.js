@@ -34,12 +34,15 @@ module.exports = {
     let courseParams = getCourseParams(req.body);
     Course.create(courseParams)
     .then(course => {
+      req.flash('success', `${course.title} created successfully`);
       res.locals.redirect = '/courses';
       res.locals.course = course;
       next();
     })
     .catch(error => {
       console.log(`Failed to save course: ${error.message}`);
+      res.locals.redirect = '/courses';
+      req.flash('error', `Unable to create course`);
       next(error);
     });
   },
@@ -84,12 +87,15 @@ module.exports = {
 
     Course.findByIdAndUpdate(courseId, { $set: courseParams })
     .then(course => {
+      req.flash('success', `Course updated successfully`);
       res.locals.redirect = `/courses/${courseId}`;
       res.locals.course = course;
       next();
     })
     .catch(error => {
       console.log(`Error updating course: ${error.message}`);
+      res.locals.redirect = '/courses/${courseId}';
+      req.flash('error', `Unable to update course`)
       next(error);
     });
   },
@@ -98,11 +104,14 @@ module.exports = {
     let courseId = req.params.id;
     Course.findByIdAndRemove(courseId)
     .then(() => {
+      req.flash('success', 'Course deleted successfully');
       res.locals.redirect = '/courses';
       next();
     })
     .catch(error => {
       console.log(`Couldn't update course: ${error.message}`);
+      res.locals.redirect = '/courses/${courseId}';
+      req.flash('error', 'Unable to delete course');
     });
   }
 }
