@@ -56,7 +56,7 @@ router.use((req, res, next) => {
   next();
 })
 
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 4022);
 app.set('view engine', 'ejs');
 
 router.get('/', homeController.showCourses);
