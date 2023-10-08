@@ -15,6 +15,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Zip Code</th>
+                        <th scope="col">API Token</th>
                         <th scope="col">Edit</th>
                         <th scpe="col">Delete</th>
                         <th scope="col">Name Letter Count</th>
@@ -38,6 +39,9 @@
                             </td>
                             <td>
                                 <%= user.zipCode %>
+                            </td>
+                            <td>
+                                <%= user.apiToken %>
                             </td>
                             <td>
                                 <a class="btn btn-primary edit-user-btn" href="<%= `users/${user._id}/edit` %>" role="button">

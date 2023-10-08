@@ -180,3 +180,76 @@
     background-color: #1e1e1e;
     color: white;
 }
+
+/*Courses Modal - Begin*/
+.btn-courses-modal {
+    background-color: #212529;
+    border-color:#FF6700;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-courses-modal:hover, .btn-courses-modal::after {
+    background-color: #FF6700;
+    border-color:#FF6700;
+    color: black;
+}
+.food-bowl {
+    color: #FF6700;
+}
+
+.food-bowl{
+    width: 10px;
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: -12px;
+    margin-right: 10px;
+  }
+  
+.food-bowl:before {
+    position: absolute;
+    left: 0;
+}
+
+.course-modal-title {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.modal-dialog, .modal-content, .course-modal-card, .modal-close-btn {
+    background-color: #212529;
+    color: white;
+}
+.course-modal-card {
+    border-color: #FF6700;
+}
+.join-btn, .btn-close-modal {
+    background-color: #212529;
+    border-color: #FF6700;
+    color: white;
+    font-weight: bold;
+    float: right;
+}
+
+.join-btn:hover, .btn-close-modal:hover {
+    border-color: #FF6700;
+    color: black;
+    font-weight: bold;
+    
+    background-color: #FF6700;
+}
+
+.course-modal-header {
+    font-weight: bold;
+    color: #FF6700;
+}
+
+.joined-button, .joined-button:active {
+    background-color: #3aff3a;
+    font-weight: bold;
+    border-color: #3aff3a;
+    float: right;
+    color: black;
+}
+
+/*---------End--------*/

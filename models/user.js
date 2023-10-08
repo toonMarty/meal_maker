@@ -3,8 +3,8 @@ const {Schema} = mongoose;
 const Subscriber = require('./subscriber');
 
 const passportLocalMongoose = require('passport-local-mongoose');
+const randToken = require('rand-token'); // random token generator
 
-const coursesController = require('../controllers/coursesController');
 
 
 const userSchema = new Schema({
@@ -32,6 +32,10 @@ const userSchema = new Schema({
     min         : [10000, "Zip code too short"],
     max         : 99999
   },
+
+  /*apiToken: {
+    type        : String
+  },*/
 
 
   courses: [{
@@ -88,6 +92,12 @@ userSchema.pre("save", function(next) {
     next();
   }
 });
+
+/*userSchema.pre("save", function(next) {
+  let user = this;
+  if (!user.apiToken) user.apiToken = randToken.generate(16);
+  next();
+});*/
 
 userSchema.plugin(passportLocalMongoose, {
   usernameField: 'email' 

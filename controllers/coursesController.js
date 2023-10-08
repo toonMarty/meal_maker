@@ -1,4 +1,7 @@
 const Course = require('../models/course');
+const httpStatus = require('http-status-codes');
+const User = require('../models/user');
+
 
 const getCourseParams = (body) => {
   return {
@@ -23,6 +26,7 @@ module.exports = {
   },
 
   indexView: (req, res) => {
+    //res.render('courses/index');
     res.render('courses/index');
   },
 
@@ -113,6 +117,70 @@ module.exports = {
       res.locals.redirect = '/courses/${courseId}';
       req.flash('error', 'Unable to delete course');
     });
+  },
+
+  respondJSON: (req, res) => {
+    res.json({
+      status: httpStatus.StatusCodes.OK,
+      data: res.locals
+    })
+  },
+  
+  errorJSON: (error, req, res, next) => {
+    let errorObject;
+
+    if (error) {
+      errorObject = {
+        status: httpStatus.StatusCodes.INTERNAL_SERVER_ERROR,
+        message: error.message
+      };
+    } else {
+      errorObject = {
+        status: httpStatus.StatusCodes.INTERNAL_SERVER_ERROR,
+        message: "It's not you, it's us"
+      }
+    }
+
+    res.json(errorObject);
+  },
+
+  join: (req, res, next) => {
+    let courseId = req.params.id;
+    let currentUser = req.user;
+
+    if (currentUser) {
+      User.findByIdAndUpdate(currentUser, {
+        $addToSet: {
+          courses: courseId
+        }
+      })
+      .then(() => {
+        res.locals.success = true;
+        next();
+      })
+      .catch(error => {
+        next(error);
+      });
+    } else {
+      next(new Error("To join a course, please log in"));
+    }
+  },
+
+  filterUserCourses: (req, res, next) => {
+    let currentUser = res.locals.currentUser;
+
+    if (currentUser) {
+      let mappedCourses = res.locals.courses.map((course) => {
+        let userJoined = currentUser.courses.some((userCourse) => {
+          return userCourse.equals(course._id);
+        });
+        return Object.assign(course.toObject(), {joined: userJoined});
+      });
+      res.locals.courses = mappedCourses;
+      next();
+    } else {
+      next();
+    }
   }
 }
 
