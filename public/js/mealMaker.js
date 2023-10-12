@@ -30,12 +30,20 @@ $(document).ready(() => {
       });
     });
 
+    socket.on('user connected', () => {
+        let userName = $('#chatUserName').val();
+        displayMessage({
+            userName: 'Notice',
+            content: `${userName} has joined the chat`
+        });
+    });
+
     socket.on('user disconnected', () => {
         displayMessage({
             userName: 'Notice',
             content: 'User left the chat'
         });
-    })
+    });
 
     let displayMessage = (message) => {
         $('#chat').prepend($("<li>").html(`

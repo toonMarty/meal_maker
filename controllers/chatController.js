@@ -4,6 +4,7 @@ const Message = require('../models/message');
 
 module.exports = io => {
     io.on("connection", client => {
+      client.broadcast.emit('user connected');
       console.log('new connection');
 
       Message.find({})
@@ -12,6 +13,10 @@ module.exports = io => {
       .then(messages => {
         client.emit('load all messages', messages.reverse());
       });
+
+      /*client.on('connect', () => {
+        client.broadcast.emit('user connected');
+      })*/
       
       // listen when a user disconnects
       client.on('disconnect', () => {
