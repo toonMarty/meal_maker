@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>MealChat</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <% if (currentUser) { %>
+            <form id="chatForm">
+                <div class="mb-3">
+                  <label for="chatInput" class="form-label">Chat</label>
+                  <input type="text" class="form-control" id="chatInput" aria-describedby="chatHelp">
+                    <input id="chatUserName" type="hidden" value="<%= currentUser.fullName %>">
+                    <input id="chatUserId" type="hidden" value="<%= currentUser._id %>">
+                  <span>
+                    <button type="submit" class="btn btn-primary btn-chat-send">Send</button>
+                  </span>
+                  
+                </div>
+            </form>
+            <div id="chat"></div>
+            <% } %>
+        </div>
+    </body>
+
+</html>

@@ -253,3 +253,31 @@
 }
 
 /*---------End--------*/
+
+/*Chat styles - Begin*/
+
+.btn-chat-send {
+    float: right;
+    margin-top: -38px;
+}
+
+#chat {
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+    border: 1px solid grey;
+
+}
+
+#chat li {
+    text-decoration: none;
+    list-style: none;
+    padding: 10px;
+}
+
+.current-user {
+    font-weight: bold;
+}
+/*---------End------*/
+
+

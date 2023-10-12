@@ -27,5 +27,9 @@ module.exports = {
   res.render('courses', { 
     offeredCourses: courses 
   });
-}
+  },
+
+  chat: (req, res) => {
+    res.render('chat');
+  }
 }

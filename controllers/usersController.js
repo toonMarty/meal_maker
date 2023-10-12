@@ -196,7 +196,7 @@ module.exports = {
     });
   },
 
-  /*verifyToken: (req, res, next) => {
+  verifyToken: (req, res, next) => {
     let token = req.query.apiToken;
 
     if (token) {
@@ -211,7 +211,7 @@ module.exports = {
     } else {
       next(new Error('Invalid API token'));
     }
-  },*/
+  },
 
   apiAuthenticate: (req, res, next) => {
     passport.authenticate('local', (errors, user)=> {

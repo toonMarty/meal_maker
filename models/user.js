@@ -33,9 +33,9 @@ const userSchema = new Schema({
     max         : 99999
   },
 
-  /*apiToken: {
+  apiToken: {
     type        : String
-  },*/
+  },
 
 
   courses: [{
@@ -93,11 +93,11 @@ userSchema.pre("save", function(next) {
   }
 });
 
-/*userSchema.pre("save", function(next) {
+userSchema.pre("save", function(next) {
   let user = this;
   if (!user.apiToken) user.apiToken = randToken.generate(16);
   next();
-});*/
+});
 
 userSchema.plugin(passportLocalMongoose, {
   usernameField: 'email' 

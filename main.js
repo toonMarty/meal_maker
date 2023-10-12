@@ -56,6 +56,9 @@ app.set('token', process.env.TOKEN || 'm34lmak3rt0k3n');
 
 app.use('/', router);
 
-app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
   console.log(`Server running at http://localhost:${app.get('port')}`);
-});
+}),
+io = require('socket.io')(server);
+
+require('./controllers/chatController')(io);
